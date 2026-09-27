@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <title>MoonChat - Instant Anonymous Chat with Strangers (No Login)</title>
+    <meta name="description" content="Connect instantly with strangers online. Completely free, anonymous, and secure secret chat platform. No registration needed.">
+    <meta property="og:title" content="MoonChat - Talk to Strangers Anonymously 🌙">
+    <meta property="og:description" content="Bina login kiye secret chat karo. Start talking in 1 click!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://random-moon-chat.onrender.com/">
+
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-app">
+        <!-- Top Navigation Bar -->
+        <header class="chat-header">
+            <div class="brand">
+                <span class="logo">🌙 MoonChat</span>
+                <div class="online-status">
+                    <span class="status-dot"></span>
+                    <span id="onlineCount">128 Strangers Online</span>
+                </div>
+            </div>
+            <button id="themeToggle" class="btn-icon">🌙</button>
+        </header>
+
+        <!-- Interest Tags Bar -->
+        <div class="interests-bar">
+            <span>Interests:</span>
+            <div class="tag-list">
+                <button class="tag active" data-tag="all">✨ Random</button>
+                <button class="tag" data-tag="gaming">🎮 Gaming</button>
+                <button class="tag" data-tag="music">🎵 Music</button>
+                <button class="tag" data-tag="college">🎓 College</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Container -->
+        <main class="chat-box" id="chatBox">
+            <div class="system-message">
+                <span>🔒 Connected to a random stranger. Say Hi!</span>
+            </div>
+        </main>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator">
+            <span>Stranger is typing...</span>
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <footer class="chat-controls">
+            <button id="skipBtn" class="btn-skip">Next ⚡</button>
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                <label for="imageInput" class="btn-file">📷</label>
+                <input type="file" id="imageInput" accept="image/*" style="display:none;">
+            </div>
+            <button id="sendBtn" class="btn-send">Send</button>
+        </footer>
+    </div>
+
+    <!-- Audio Elements for Sound Effects -->
+    <audio id="soundSend" src="https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3" preload="auto"></audio>
+    <audio id="soundReceive" src="https://assets.mixkit.co/active_storage/sfx/2358/2358-preview.mp3" preload="auto"></audio>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
